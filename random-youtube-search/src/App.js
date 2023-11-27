@@ -3,8 +3,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { fetchRandomWord } from './components/RandomWordGenerator';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from 'react-bootstrap/Card';
 
 function App() {
   const [randomWord, setRandomWord] = useState('');
@@ -39,15 +39,21 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Random Youtube Search!</h1>
-        <h2>
-          Tired of always watching the same videos? Look no further! This website has the perfect solution to your problem
+      <img src={youtube} className="App-logo" alt="logo" />
+      </header>
+      <h1 class="display-4">Random Youtube Search!</h1>
+     
+      
+      <p class="lead">Tired of always watching the same videos? Look no further! This website has the perfect solution to your problem
           and provides a neverending list of YouTube searches!
-        </h2>
-        <img src={youtube} className="App-logo" alt="logo" />
+          </p>
+    
+      
+        
+       
 
         <div>
-        <p>Generated Word(s): {randomWord} {customWords.join(' ')}</p>
+        <h1>Generated Word(s): {randomWord} {customWords.join(' ')}</h1>
 
           <Button variant="primary" onClick={handleGenerateAnotherWord}>
             Generate Another Word
@@ -62,7 +68,7 @@ function App() {
             Search on YouTube
           </Button>
         </div>
-      </header>
+      
     </div>
   );
 }
